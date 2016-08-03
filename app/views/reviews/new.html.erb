@@ -1,5 +1,7 @@
-<%= form_for [@restaurant, @review] do |f| %>
-<%= f.number_field :rating %>
-<%= f.text_field :content %>
-<%= f.submit "add this review" %>
-<% end %>
+
+<div class="text-center">
+<h1>Make a new review</h1>
+<br>
+<%= render 'form_review' %>
+
+</div>
