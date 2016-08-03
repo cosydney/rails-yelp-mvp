@@ -20,6 +20,23 @@
   <%= @restaurant.category %>
 </p>
 
+
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
-<%= link_to  %>
+|
+<%= link_to 'Create review', restaurant_review_path(@restaurant) %>
+
+<hr>
+<h4>Reviews</h4>
+<% @restaurant.reviews.each do |review|  %>
+<ul class="list-unstyled">
+
+  <li><%= "*" * review.rating %> <%= review.content %></li>
+</ul>
+
+<% end %>
+
+<h3>Create review</h3>
+<%= render 'reviews/form_review' %>
+
+

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   resources :restaurants do
-    resources :reviews, only: [:new, :create]
+     # resources :reviews, only: [:new, :create]
+    get 'reviews/new' => "review#new", as: :reviews
+    post 'reviews' => 'review#create', as: :review
+
   end
 
  root 'restaurants#index'
